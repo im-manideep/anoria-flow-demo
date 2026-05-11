@@ -15,10 +15,12 @@ interface DashboardProps {
 export default function Dashboard({ emotionEngine }: DashboardProps) {
   const [, forceUpdate] = useState({})
 
-  useEffect(() => {
-    const unsubscribe = emotionEngine.subscribe(() => {
-      forceUpdate({})
-    })
+useEffect(() => {
+  const unsubscribe = emotionEngine.subscribe(() => {
+    forceUpdate({})
+  })
+  return () => unsubscribe()
+}, [emotionEngine])
     return unsubscribe
   }, [emotionEngine])
 
