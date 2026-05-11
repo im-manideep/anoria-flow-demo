@@ -21,8 +21,7 @@ useEffect(() => {
   })
   return () => unsubscribe()
 }, [emotionEngine])
-    return unsubscribe
-  }, [emotionEngine])
+  
 
   return (
     <div className="max-w-2xl mx-auto px-4 pt-8 space-y-8">
